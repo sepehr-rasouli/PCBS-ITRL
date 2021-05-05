@@ -1,4 +1,4 @@
-ITRL
+PCBS-ITRL
 Information Theory and Reinforcement Learning
 
 Implementation of information theory of "The information bottleneck" paper
