@@ -162,5 +162,5 @@ In conclusion, mutual information is a good tool to understand how neural networ
 2. Figures could be done by plotly which offers better tools for analysis.
 3. The figures are all in the same path of the main project while they should be saved in dedicated folders. This is due to various combability issues with how Jupyter Notebook and python3 handle files and issues with running the project on another device for testing.
 4. The entropy function runtime could be improved by using nump/math entropy function which seems to have the fastest runtime (according to [https://stackoverflow.com/a/45091961](https://stackoverflow.com/a/45091961))
-5. By using all the MNIST images (limited to 10,000 for this project because of the limited processing power available due to using an old processor), we would be able to acquire more accurate results.
+5. By using all the MNIST images (limited to 10,000 for this project because of the limited processing power available), we would be able to acquire more accurate results.
 6. This project could be extended to include the information bottle neck methods
