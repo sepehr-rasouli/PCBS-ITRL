@@ -15,7 +15,7 @@ Table of Contents
 
 `Python v3, numpy, scipy, sklearn, matplotlib, seaborn`
 
-## &quot;**Information Theory: An Analysis of Supervised Learning&quot;**
+## **Information Theory: An Analysis of Supervised Learning**
 
 In this project, we&#39;ll analyze an example of supervised learning, specifically the MNIST data set, using information theory tools such as entropy and mutual information. We&#39;ll start by binarizing the data set and then plotting a heatmap of each digit summed over the training data set. Next, we&#39;ll calculate the mutual information between each pixel and its class label. Finally, we&#39;ll use the pixels with the highest mutual information and calculate their prediction ability on the dataset.
 
@@ -66,8 +66,8 @@ As expected, the heatmap represents the optimal shape of each digit.
 
 We&#39;ll start by calculating the probability distribution of the class labels:
 
-`prob_Y = np.unique(bin_mnist_label, return_counts=True)[1] / bin_mnist_label.shape[0]
-`
+`prob_Y = np.unique(bin_mnist_label, return_counts=True)[1] / bin_mnist_label.shape[0]`
+
 And we&#39;ll calculate the entropy of probability mass function p ,H(x) = -∑ p \* log2(p) :
 
 > def entropy(vector\_prob):
@@ -75,6 +75,7 @@ And we&#39;ll calculate the entropy of probability mass function p ,H(x) = -∑ 
 > if vector\_prob.ndim \> 1:
 > 
 > \# to account for 2d probability vector
+> 
 > entropy = np.sum(-np.multiply(vector\_prob, np.ma.log2(vector\_prob)), axis=1)
 > entropy = np.ma.fix\_invalid(entropy, fill\_value=0)
 > 
