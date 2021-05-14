@@ -3,12 +3,12 @@
 Table of Contents
 =================
 
-   * [<strong>Package Requirements</strong>](#package-requirements)
-   * ["<strong>Information Theory: An Analysis of Supervised Learning"</strong>](#information-theory-an-analysis-of-supervised-learning)
-      * [1) <strong>Importing the data set, binarizing and plotting the digits</strong>](#1-importing-the-data-set-binarizing-and-plotting-the-digits)
-      * [2) <strong>Information Theory Tools Analysis</strong>](#2-information-theory-tools-analysis)
-      * [3) <strong>Prediction Power of Mutual Information in Supervised Learning</strong>](#3-prediction-power-of-mutual-information-in-supervised-learning)
-   * [Remarks for PCBS:](#remarks-for-pcbs)
+   * [Package Requirements](#package-requirements)
+   * [Information Theory: An Analysis of Supervised Learning](#information-theory-an-analysis-of-supervised-learning)
+      * [Importing the data set, binarizing and plotting the digits](#1-importing-the-data-set-binarizing-and-plotting-the-digits)
+      * [Information Theory Tools Analysis](#2-information-theory-tools-analysis)
+      * [Prediction Power of Mutual Information in Supervised Learning](#3-prediction-power-of-mutual-information-in-supervised-learning)
+   * [Remarks for PCBS](#remarks-for-pcbs)
    * [References](#references)
    * [TODO](#todo)
 ## **Package Requirements**
@@ -133,7 +133,7 @@ As seen in the plot accuracy increases from the single pixel accuracy at 0.21 un
 
 In conclusion, mutual information is a good tool to understand how neural networks work under the hood. This is a starting point to further discover what the neural network is doing to predict the data. Further, using information theory tools to evaluate the performance of deep neural networks is explored in the &quot;Opening the Black Box of Deep Neural Networks via Information&quot; paper by Tishby. He attempts to build a comprehensive theory, namely information bottle neck theory, to find out the relation between mutual information and DNNs. Briefly, the theory is about how compressing the useful information in the data is represented by the mutual information between the data and the middle layers of the network.
 
-## Remarks for PCBS:
+## Remarks for PCBS
 
 1. The project has been coded in a Jupyter notebook for easier debugging due to the long run time of each section. But I have finally decided to put all of my code into a singly python file to conform to the rules and to have the same structure as the other students. The README.MD will walk you through the project step by step. While the python file creates the results and figures at once, all of them will be saved in the same directory.
 2. Some variables in the functions shadow names from the outerscope, while the PEP guide discourages this, it was due to readabilty.
