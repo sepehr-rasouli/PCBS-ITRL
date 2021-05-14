@@ -13,7 +13,7 @@ Table of Contents
    * [TODO](#todo)
 ## **Package Requirements**
 
-`Python v3, numpy, scipy, sklearn, matplotlib, seaborn`
+`python v3, numpy, scipy, sklearn, matplotlib, seaborn`
 
 ## **Information Theory: An Analysis of Supervised Learning**
 
@@ -25,11 +25,11 @@ In this project we&#39;ll use a binarized version of the MNIST dataset, which is
 
  we&#39;ll import the dataset and binarize it using sklearn&#39;s function:
 
-> mnist = fetch\_openml(&#39;mnist\_784&#39;, cache=False)
-> 
-> bin_mnist_data = binarize(mnist.data)
-> 
-> bin_mnist_label = mnist.target.astype(np.int)
+```python
+mnist = fetch_openml('mnist_784', cache=False)
+bin_mnist_data = binarize(mnist.data)
+bin_mnist_label = mnist.target.astype(np.int)
+```
 
 Now, we have both the training set and label set.
 
@@ -66,39 +66,34 @@ As expected, the heatmap represents the optimal shape of each digit.
 
 We&#39;ll start by calculating the probability distribution of the class labels:
 
-`prob_Y = np.unique(bin_mnist_label, return_counts=True)[1] / bin_mnist_label.shape[0]`
-
-And we&#39;ll calculate the entropy of probability mass function p ,H(x) = -∑ p \* log2(p) :
-
-> def entropy(vector\_prob):
-> 
-> if vector\_prob.ndim \> 1:
-> 
-> \# to account for 2d probability vector
-> 
-> entropy = np.sum(-np.multiply(vector\_prob, np.ma.log2(vector\_prob)), axis=1)
-> entropy = np.ma.fix\_invalid(entropy, fill\_value=0)
-> 
-> return np.array(entropy)
-> 
-> else:
-> 
-> return -np.sum([np.multiply(p, np.ma.log2(p)) for p in vector\_prob])
-
+```python
+prob_Y = np.unique(bin_mnist_label, return_counts=True)[1] / bin_mnist_label.shape[0]
+```
+And we&#39;ll calculate the entropy of probability mass function p ,`H(x) = -∑ p*log2(p)` :
+```python
+def entropy(vector_prob):
+    if vector_prob.ndim > 1:
+        #         to account for 2d probability vector
+        entropy = np.sum(-np.multiply(vector_prob, np.ma.log2(vector_prob)), axis=1)
+        entropy = np.ma.fix_invalid(entropy, fill_value=0)
+        return np.array(entropy)
+    else:
+        return -np.sum([np.multiply(p, np.ma.log2(p)) for p in vector_prob])
+```
 The entropy for the class labels is 3.318 bits being close to the entropy of a uniform distribution , which is log2(10) = 3.321.
 
 Now, we could estimate the mutual information of each pixel and the class label. This would result in knowing which pixels represent the class label better. The mutual information, have been implemented by the following formula 
 
 `I(X,Y) = H(Y) – H(Y|X)`
 
-Each pixel, either represent its class label or not, thus we calculate P(Y|X=0) and P(Y|X=1) .
+Each pixel, either represent its class label or not, thus we calculate `P(Y|X=0)` and `P(Y|X=1)`.
 
-The function P\_Y\_given\_X calculates this probability by counting the times each pixel has correctly predicted the label for all the digits.
+The function `p_y_given_x` calculates this probability by counting the times each pixel has correctly predicted the label for all the digits.
  Finally, the mutual information is calculated by :
  
 `I(X|Y) = H(Y) – H(Y|X=0) * P(X=0) - H(Y|X=1) * P(X=1)`
 
-For I(X,Y), min=0, max=0.336, mean=0.089, and median=0.06.
+For `I(X,Y): min=0, max=0.336, mean=0.089, median=0.060`.
  This shows some pixels have no mutual information with the class while the best ones have a mutual information of 0.336.
 
 The plot for the mutual information of each digit and the labels is the following figure:
