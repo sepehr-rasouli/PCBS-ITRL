@@ -1,4 +1,6 @@
-## **Package Requirements:**
+``mnist_mi.py`` — a python project on information theory and supervised learning.
+
+## **Package Requirements**
 
 `Python v3, numpy, scipy, sklearn, matplotlib, seaborn`
 
@@ -6,7 +8,7 @@
 
 In this project, we&#39;ll analyze an example of supervised learning, specifically the MNIST data set, using information theory tools such as entropy and mutual information. We&#39;ll start by binarizing the data set and then plotting a heatmap of each digit summed over the training data set. Next, we&#39;ll calculate the mutual information between each pixel and its class label. Finally, we&#39;ll use the pixels with the highest mutual information and calculate their prediction ability on the dataset.
 
-### 1) &quot; **Importing the data set, binarizing and plotting the digits&quot;**
+### 1) **Importing the data set, binarizing and plotting the digits**
 
 In this project we&#39;ll use a binarized version of the MNIST dataset, which is a large database of handwritten digits that is commonly used for training various image processing systems.
 
@@ -49,7 +51,7 @@ By using the plot\_binarized\_digit function we&#39;ll plot the 10th batch of th
 
 As expected, the heatmap represents the optimal shape of each digit.
 
-### 2) &quot; **Information Theory Tools Analysis&quot;**
+### 2) **Information Theory Tools Analysis**
 
 We&#39;ll start by calculating the probability distribution of the class labels:
 
@@ -100,7 +102,7 @@ To compare pixel accuracy and pixel mutual information, we differentiate the pix
 <img src="./images/MI-differentiated-by-pixel-accuracy.png" alt="MI-differentiated-by-pixel-accuracy" width="400"/>
 <img src="./images/MI-differentiated-by-normalized-pixel-accuracy.png" alt="MI-differentiated-by-normalized-pixel-accuracy" width="400"/>
 
-### 3) &quot; **Prediction Power of Mutual Information in Supervised Learning&quot;**
+### 3) **Prediction Power of Mutual Information in Supervised Learning**
 
 In the previous section, the mutual information of pixels and the pixel accuracy has been analyzed. In this section, we&#39;ll try to directly test the predictive power of pixels with high mutual information on the labels using the test data.
 
