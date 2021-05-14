@@ -1,5 +1,16 @@
 ``mnist_mi.py`` — a python project on information theory and supervised learning.
 
+Table of Contents
+=================
+
+   * [<strong>Package Requirements</strong>](#package-requirements)
+   * ["<strong>Information Theory: An Analysis of Supervised Learning"</strong>](#information-theory-an-analysis-of-supervised-learning)
+      * [1) <strong>Importing the data set, binarizing and plotting the digits</strong>](#1-importing-the-data-set-binarizing-and-plotting-the-digits)
+      * [2) <strong>Information Theory Tools Analysis</strong>](#2-information-theory-tools-analysis)
+      * [3) <strong>Prediction Power of Mutual Information in Supervised Learning</strong>](#3-prediction-power-of-mutual-information-in-supervised-learning)
+   * [Remarks for PCBS:](#remarks-for-pcbs)
+   * [References](#references)
+   * [TODO](#todo)
 ## **Package Requirements**
 
 `Python v3, numpy, scipy, sklearn, matplotlib, seaborn`
